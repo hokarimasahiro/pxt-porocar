@@ -9,7 +9,7 @@
     "files": [
         "README.md",
         "porocar.ts",
-        "sendBufferAsmL.asm"
+        "sendBufferL.asm"
     ],
     "testFiles": [
         "test.ts"

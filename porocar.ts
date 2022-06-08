@@ -45,7 +45,7 @@ enum RGBColors {
 //% color=#006464 weight=20 icon="\uf1b9" block="poroCar"
 namespace porocar {
     //% shim=sendBufferAsm
-    function sendBufferAsmL(buf: Buffer, pin: DigitalPin) {
+    function sendBufferAsm(buf: Buffer, pin: DigitalPin) {
     }
 
     let initFlag = 0;
@@ -219,7 +219,7 @@ namespace porocar {
     export function show() {
         let Pin: DigitalPin
 
-        sendBufferAsmL(buf, stripPin);
+        sendBufferAsm(buf, stripPin);
     }
 
     /**

@@ -4,13 +4,11 @@
     "description": "",
     "dependencies": {
         "core": "*",
-        "radio": "*",
         "microphone": "*"
     },
     "files": [
         "README.md",
-        "porocar.ts",
-        "custom.ts"
+        "porocar.ts"
     ],
     "testFiles": [
         "test.ts"

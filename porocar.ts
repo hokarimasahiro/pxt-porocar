@@ -118,10 +118,10 @@ namespace porocar {
      * Get Distance.
      */
     //% weight=75 blockGap=8
-    //% blockId="Get_distance" block="get distance(cm)"
+    //% blockId="get_distance" block="distance(in mm)"
     export function getDistance(): number {
 
-        const usParCm = 43 //58    // 1000000[uS] / (340[m/S](sped of sound) * 100(cm)) * 2(round trip)
+        const usParMm = 5.88 // 1000000[uS] / (340.29[m/S](sped of sound) * 1000(mm)) / 2(round trip)
         let pinT: number
         let pinR: number
         let distance: number;
@@ -136,9 +136,9 @@ namespace porocar {
         control.waitMicros(10);
         pins.digitalWritePin(pinT, 0);
 
-        distance = pins.pulseIn(pinR, PulseValue.High, 800 * usParCm);
+        distance = pins.pulseIn(pinR, PulseValue.High, 8000 * usParMm);
 
-        return distance / usParCm;
+        return (distance / usParMm) >> 0;
     }
 
     /**

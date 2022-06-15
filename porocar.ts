@@ -126,8 +126,8 @@ namespace porocar {
         let pinR: number
         let distance: number;
 
-        pinT = DigitalPin.P2
-        pinR = DigitalPin.P1
+        pinT = DigitalPin.P12
+        pinR = DigitalPin.P8
 
         pins.setPull(pinT, PinPullMode.PullNone);
         pins.digitalWritePin(pinT, 0);

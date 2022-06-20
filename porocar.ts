@@ -62,14 +62,20 @@ namespace porocar {
     }
 
     function setPwmMotor(speedL: number, speedR: number): void {
-        if (speedL >= 0) {
+        if (speedL == 0){
+            pins.digitalWritePin(DigitalPin.P13, 1)
+            pins.digitalWritePin(DigitalPin.P14, 1)
+        } else if (speedL >= 0) {
             pins.digitalWritePin(DigitalPin.P13, 0)
             pins.analogWritePin(AnalogPin.P14, speedL * 4);
         } else {
             pins.digitalWritePin(DigitalPin.P14, 0)
             pins.analogWritePin(AnalogPin.P13, (0 - speedL) * 4);
         }
-        if (speedR >= 0) {
+        if (speedR == 0) {
+            pins.digitalWritePin(DigitalPin.P15, 1)
+            pins.digitalWritePin(DigitalPin.P16, 1)
+        } else if (speedR >= 0) {
             pins.digitalWritePin(DigitalPin.P15, 0)
             pins.analogWritePin(AnalogPin.P16, speedR * 4);
         } else {

@@ -70,11 +70,11 @@ namespace porocar {
             pins.analogWritePin(AnalogPin.P13, (0 - speedL) * 4);
         }
         if (speedR >= 0) {
-            pins.digitalWritePin(DigitalPin.P16, 0)
-            pins.analogWritePin(AnalogPin.P15, speedR * 4);
-        } else {
             pins.digitalWritePin(DigitalPin.P15, 0)
-            pins.analogWritePin(AnalogPin.P16, (0 - speedR) * 4);
+            pins.analogWritePin(AnalogPin.P16, speedR * 4);
+        } else {
+            pins.digitalWritePin(DigitalPin.P16, 0)
+            pins.analogWritePin(AnalogPin.P15, (0 - speedR) * 4);
         }
     }
 
